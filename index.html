@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | PHP Dev & Digital Creator</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        :root { --primary: #2563eb; --dark: #1f2937; --light: #f3f4f6; --accent: #10b981; }
+        body { line-height: 1.6; color: var(--dark); background: #fafafa; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, var(--primary), #1d4ed8); color: white; padding: 4rem 0; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        
+        /* Sections */
+        section { padding: 3rem 0; }
+        h2 { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; color: var(--primary); }
+        h3 { color: var(--primary); margin-bottom: 0.8rem; }
+        
+        /* About */
+        .about-content { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        
+        /* Skills & Services */
+        .skills-grid, .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+        .skill-tag { background: var(--light); padding: 0.9rem 1rem; border-radius: 8px; text-align: center; font-weight: 500; }
+        .service-card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); }
+        
+        /* Projects */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .project-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-card h3 { padding: 1.2rem 1.2rem 0; }
+        .project-card p { padding: 1rem 1.2rem; color: #555; }
+        .project-links { padding: 0 1.2rem 1.2rem; }
+        .btn { display: inline-block; padding: 0.6rem 1.2rem; background: var(--primary); color: white; border-radius: 6px; text-decoration: none; margin: 0.3rem; transition: background 0.3s; }
+        .btn:hover { background: #1d4ed8; }
+        .btn.secondary { background: var(--accent); }
+        .btn.secondary:hover { background: #0d9668; }
+        
+        /* Contact */
+        .contact-box { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; }
+        
+        /* Footer */
+        footer { background: var(--dark); color: white; text-align: center; padding: 1.5rem 0; margin-top: 2rem; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <h1>Hi, I'm [Your Full Name] 👋</h1>
+        <p>Self-Taught BSIT Graduate • PHP / MySQL Web Developer • Digital Product Creator & Editor</p>
+        <p style="margin-top: 1rem; font-size: 1rem;">📍 Bacolod City, Philippines | 🌐 Open to Remote & Freelance Worldwide</p>
+        <p style="margin-top: 0.5rem; font-size: 0.95rem;">💳 Payments: GCash • PayPal | No Bank Account Needed</p>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>I am a self-taught BSIT graduate building practical, production-ready web solutions and creative digital products. I code end-to-end with <strong>PHP, MySQL, HTML5, and CSS3</strong> — writing clean, organized code with user-friendly design and basic security best practices built in.</p>
+            <br>
+            <p>Beyond coding, I design and publish branded digital products — including original e-books, children’s story collections, and professional social media template kits — using Canva and AI tools. I also do <strong>video editing</strong> and general tech troubleshooting.</p>
+            <br>
+            <p>I work efficiently with VS Code, Git & GitHub, ChatGPT, and Google Docs. I build income streams that work for Filipino and global buyers — accepting <strong>GCash and PayPal</strong> with no bank account required. I am fully focused on landing remote roles and freelance projects, delivering reliable quality every time.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TECHNICAL SKILLS -->
+<section id="skills" style="background: white;">
+    <div class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">✅ PHP (Backend)</div>
+            <div class="skill-tag">✅ MySQL (Databases)</div>
+            <div class="skill-tag">✅ HTML5</div>
+            <div class="skill-tag">✅ CSS3</div>
+            <div class="skill-tag">✅ Responsive Design</div>
+            <div class="skill-tag">✅ Basic Web Security</div>
+            <div class="skill-tag">✅ VS Code</div>
+            <div class="skill-tag">✅ Git & GitHub</div>
+            <div class="skill-tag">✅ ChatGPT & AI Tools</div>
+            <div class="skill-tag">✅ Google Docs / Drive</div>
+            <div class="skill-tag">✅ Video Editing</div>
+            <div class="skill-tag">✅ Tech Troubleshooting</div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT I CAN DO / SERVICES -->
+<section id="services">
+    <div class="container">
+        <h2>What I Can Do For You</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🌐 Build Websites & Web Apps</h3>
+                <p>Dynamic sites with PHP backend, MySQL database, custom HTML/CSS layouts, clean navigation, and secure basic authentication.</p>
+            </div>
+            <div class="service-card">
+                <h3>📖 Create Digital Products</h3>
+                <p>Complete e-books, children’s illustrated stories, and guides — written, designed, branded, and ready to sell on Payhip & Etsy.</p>
+            </div>
+            <div class="service-card">
+                <h3>🎨 Design Social Media Kits</h3>
+                <p>Full sets of branded Canva templates — posts, banners, thumbnails — fully editable and ready for immediate use.</p>
+            </div>
+            <div class="service-card">
+                <h3>✂️ Edit Videos</h3>
+                <p>Clean cuts, sequencing, text overlays, and pacing for social media, portfolios, or client projects.</p>
+            </div>
+            <div class="service-card">
+                <h3>🔧 Fix & Troubleshoot Tech</h3>
+                <p>Debug code, update layouts, resolve HTML/CSS issues, fix simple PHP/MySQL errors, and guide tool setup (VS Code, GitHub, etc.).</p>
+            </div>
+            <div class="service-card">
+                <h3>🚀 Build No-Code Income</h3>
+                <p>Plan, create, and list digital products with zero upfront cost — optimized for local & global buyers, GCash/PayPal ready.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background: white;">
+    <div class="container">
+        <h2>My Featured Projects</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <h3>PHP + MySQL Dynamic Web App</h3>
+                <p>Full-stack website with database connectivity, user-friendly interface, organized folder structure, and protection against common vulnerabilities.</p>
+                <div class="project-links">
+                    <a href="#" class="btn">View Demo</a>
+                    <a href="https://github.com/yourusername" class="btn secondary" target="_blank">Source Code</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Branded E-Book & Children’s Story Collection</h3>
+                <p>Original written content, fully designed interiors & covers in Canva, formatted for PDF download — ready to publish on Payhip / Etsy.</p>
+                <div class="project-links">
+                    <a href="#" class="btn">See Samples</a>
+                    <a href="#" class="btn secondary">Store Listing</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <h3>Professional Social Media Template Kit</h3>
+                <p>Cohesive branded design system — post layouts, profile banners, highlight covers, and editable Canva links included.</p>
+                <div class="project-links">
+                    <a href="#" class="btn">Preview Kit</a>
+                    <a href="#" class="btn secondary">Get Templates</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <h2>Ready to Work Together</h2>
+        <div class="contact-box">
+            <p><strong>Available for:</strong> Remote Web Development • Freelance Coding • Digital Product Design • Video Editing</p>
+            <p style="margin: 1rem 0;">
+                📍 Based in Bacolod City, Philippines<br>
+                ⏰ Can align with PH, Asian, and Western time zones<br>
+                💳 Accepts: GCash (local) • PayPal (international)
+            </p>
+            <a href="https://github.com/yourusername" class="btn" target="_blank">Visit My GitHub</a>
+            <a href="mailto:your-email@example.com" class="btn secondary">Send Me an Email</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 [Your Full Name]. Built with HTML & CSS • Hosted on GitHub Pages</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Turning self-taught skills into real value — one project at a time.</p>
+    </div>
+</footer>
+
+</body>
+</html>
