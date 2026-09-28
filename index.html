@@ -49,14 +49,21 @@ nav ul a:hover{color:#fff}
 .btn.ghost{background:var(--glass);color:var(--text);border-color:var(--edge)}
 .btn.ghost:hover{border-color:var(--a1);box-shadow:none}
 
-/* Code window: the hero's signature element */
-.code{background:rgba(10,15,30,.75);border:1px solid var(--edge);border-radius:16px;box-shadow:0 30px 70px rgba(0,0,0,.45),0 0 0 1px rgba(124,140,255,.12);overflow:hidden}
-.bar{display:flex;align-items:center;gap:7px;padding:.8rem 1rem;border-bottom:1px solid var(--edge);background:rgba(255,255,255,.03)}
-.bar i{width:11px;height:11px;border-radius:50%;background:#ff5f57}
-.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
-.bar span{margin-left:.6rem;font:.8rem var(--mono);color:var(--muted)}
-.code pre{padding:1.3rem 1.4rem;font:.86rem/1.85 var(--mono);color:#c9d3ee;overflow-x:auto}
-.k{color:var(--a3)}.s{color:var(--a2)}.c{color:#66738f}.v{color:var(--a1)}
+
+/* Photo + images */
+.photo{position:relative;max-width:400px;justify-self:center;width:100%;border-radius:26px;padding:8px;background:linear-gradient(150deg,rgba(124,140,255,.5),rgba(79,209,197,.25) 60%,transparent);box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:20px;background:var(--bg2)}
+.photo figcaption{position:absolute;left:22px;right:22px;bottom:22px;background:rgba(10,15,30,.72);backdrop-filter:blur(12px);border:1px solid var(--edge);border-radius:12px;padding:.7rem 1rem;display:flex;flex-direction:column;font-size:.85rem;color:var(--muted)}
+.photo figcaption b{color:var(--text);font-size:.95rem}
+.project{overflow:hidden}
+.project img{display:block;width:calc(100% + 3.6rem);max-width:none;margin:-1.8rem -1.8rem 1.4rem;aspect-ratio:16/10;object-fit:cover;background:var(--bg2);border-bottom:1px solid var(--edge)}
+
+/* Process */
+.steps{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.steps li{counter-increment:s;background:var(--glass);border:1px solid var(--edge);border-radius:16px;padding:1.6rem}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--grad);color:#0a0f1e;font-weight:700;margin-bottom:1rem}
+.steps b{display:block;font-family:var(--display);font-size:1.15rem;margin-bottom:.3rem}
+.steps p{color:var(--muted)}
 
 /* Sections */
 section{padding:4.5rem 0}
@@ -90,7 +97,6 @@ h3{font-family:var(--display);font-size:1.15rem;margin-bottom:.4rem}
 /* Projects */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.4rem}
 .project{position:relative;background:var(--glass);border:1px solid var(--edge);border-radius:16px;padding:1.8rem;display:flex;flex-direction:column;transition:border-color .25s,box-shadow .25s}
-.project::before{content:"";position:absolute;left:1.8rem;right:1.8rem;top:0;height:2px;background:var(--grad);border-radius:0 0 4px 4px}
 .project:hover{border-color:rgba(124,140,255,.5);box-shadow:0 18px 40px rgba(0,0,0,.35)}
 .project .tag{align-self:flex-start;color:var(--a2);font-size:.85rem;font-weight:700;margin-bottom:.9rem}
 .project p{color:var(--muted);margin-bottom:1.5rem;flex:1}
@@ -151,36 +157,11 @@ footer{padding:2rem 0 2.5rem;text-align:center;color:var(--muted);font-size:.9re
         <a href="#contact" class="btn ghost">Get in touch</a>
       </div>
     </div>
-    <div class="code" aria-label="Code sample describing my profile">
-      <div class="bar"><i></i><i></i><i></i><span>developer.php</span></div>
-<pre><code><span class="k">&lt;?php</span>
-<span class="v">$developer</span> = [
-  <span class="s">'name'</span>     =&gt; <span class="s">'[Your Full Name]'</span>,
-  <span class="s">'location'</span> =&gt; <span class="s">'Bacolod City, PH'</span>,
-  <span class="s">'stack'</span>    =&gt; [<span class="s">'PHP'</span>, <span class="s">'MySQL'</span>, <span class="s">'HTML5'</span>, <span class="s">'CSS3'</span>],
-  <span class="s">'payments'</span> =&gt; [<span class="s">'GCash'</span>, <span class="s">'PayPal'</span>],
-  <span class="s">'remote'</span>   =&gt; <span class="k">true</span>,
-];
-<span class="c">// Available for freelance projects</span></code></pre>
-    </div>
-  </div>
-</header>
-
-<main>
-<section id="about">
-  <div class="wrap about">
-    <div>
-      <h2>About me</h2>
-      <p>I build practical, production-ready web solutions end to end with <strong>PHP, MySQL, HTML5, and CSS3</strong>. My code is clean and organized, with user-friendly design and basic security practices built in from the start.</p>
-      <p>Beyond code, I design and publish original e-books, children's story collections, and social media template kits using Canva and AI tools. I also edit video and troubleshoot tech problems.</p>
-      <p>I work daily in VS Code, Git and GitHub, ChatGPT, and Google Docs. I accept <strong>GCash and PayPal</strong>, so local and international clients can pay without a bank account.</p>
-    </div>
-    <div class="stats">
-      <div class="stat"><b>BSIT</b><span>Graduate, self-taught developer</span></div>
-      <div class="stat"><b>Full stack</b><span>PHP backend to CSS front end</span></div>
-      <div class="stat"><b>Remote-ready</b><span>Flexible across time zones</span></div>
-      <div class="stat"><b>Multi-skilled</b><span>Code, design, and video</span></div>
-    </div>
+    <figure class="photo">
+      <!-- Replace the src below with your own photo, e.g. src="images/profile.jpg" -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 1000'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233b4a9e'/%3E%3Cstop offset='1' stop-color='%231f8f88'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='1000' fill='url(%23g)'/%3E%3Cg fill='none' stroke='white' stroke-opacity='.55' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' transform='translate(360.0,438.0)'%3E%3Crect x='0' y='10' width='80' height='60' rx='10'/%3E%3Ccircle cx='40' cy='40' r='14'/%3E%3Cpath d='M22 10l6-10h24l6 10'/%3E%3C/g%3E%3Ctext x='50%' y='562.0' text-anchor='middle' font-family='Arial,sans-serif' font-size='45' fill='white' fill-opacity='.75'%3EYour photo here%3C/text%3E%3C/svg%3E" alt="Portrait of [Your Full Name]" width="800" height="1000">
+      <figcaption><b>Bacolod City, PH</b><span>Open to remote and freelance work</span></figcaption>
+    </figure>
   </div>
 </section>
 
@@ -228,6 +209,20 @@ footer{padding:2rem 0 2.5rem;text-align:center;color:var(--muted);font-size:.9re
   </div>
 </section>
 
+<section id="process">
+  <div class="wrap">
+    <div class="head">
+      <h2>How I work</h2>
+      <p>A simple process so you always know what happens next.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Discuss</b><p>We agree on goals, scope, timeline, and price before any work starts.</p></li>
+      <li><b>Build</b><p>I deliver in clear stages and share progress so you can give feedback early.</p></li>
+      <li><b>Deliver</b><p>You get finished files, clean code, and a quick handover so you can use everything right away.</p></li>
+    </ol>
+  </div>
+</section>
+
 <section id="projects">
   <div class="wrap">
     <div class="head">
@@ -236,6 +231,7 @@ footer{padding:2rem 0 2.5rem;text-align:center;color:var(--muted);font-size:.9re
     </div>
     <div class="projects">
       <article class="project">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233b4a9e'/%3E%3Cstop offset='1' stop-color='%235b3f9e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23g)'/%3E%3Cg fill='none' stroke='white' stroke-opacity='.55' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' transform='translate(360.0,188.0)'%3E%3Crect x='0' y='10' width='80' height='60' rx='10'/%3E%3Ccircle cx='40' cy='40' r='14'/%3E%3Cpath d='M22 10l6-10h24l6 10'/%3E%3C/g%3E%3Ctext x='50%' y='312.0' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' fill='white' fill-opacity='.75'%3EProject screenshot%3C/text%3E%3C/svg%3E" alt="Screenshot of the PHP and MySQL web app" width="800" height="500" loading="lazy">
         <span class="tag">Web development</span>
         <h3>PHP and MySQL dynamic web app</h3>
         <p>A full-stack website with database connectivity, a user-friendly interface, an organized folder structure, and protection against common vulnerabilities.</p>
@@ -245,6 +241,7 @@ footer{padding:2rem 0 2.5rem;text-align:center;color:var(--muted);font-size:.9re
         </div>
       </article>
       <article class="project">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231f8f88'/%3E%3Cstop offset='1' stop-color='%233b4a9e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23g)'/%3E%3Cg fill='none' stroke='white' stroke-opacity='.55' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' transform='translate(360.0,188.0)'%3E%3Crect x='0' y='10' width='80' height='60' rx='10'/%3E%3Ccircle cx='40' cy='40' r='14'/%3E%3Cpath d='M22 10l6-10h24l6 10'/%3E%3C/g%3E%3Ctext x='50%' y='312.0' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' fill='white' fill-opacity='.75'%3EBook cover mockup%3C/text%3E%3C/svg%3E" alt="Mockup of the e-book cover" width="800" height="500" loading="lazy">
         <span class="tag">Digital product</span>
         <h3>Branded e-book and children's story collection</h3>
         <p>Original written content with interiors and covers designed in Canva, formatted as a PDF download and ready to publish on Payhip or Etsy.</p>
@@ -254,6 +251,7 @@ footer{padding:2rem 0 2.5rem;text-align:center;color:var(--muted);font-size:.9re
         </div>
       </article>
       <article class="project">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b3f9e'/%3E%3Cstop offset='1' stop-color='%231f8f88'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23g)'/%3E%3Cg fill='none' stroke='white' stroke-opacity='.55' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' transform='translate(360.0,188.0)'%3E%3Crect x='0' y='10' width='80' height='60' rx='10'/%3E%3Ccircle cx='40' cy='40' r='14'/%3E%3Cpath d='M22 10l6-10h24l6 10'/%3E%3C/g%3E%3Ctext x='50%' y='312.0' text-anchor='middle' font-family='Arial,sans-serif' font-size='22' fill='white' fill-opacity='.75'%3ETemplate preview%3C/text%3E%3C/svg%3E" alt="Preview of the social media template kit" width="800" height="500" loading="lazy">
         <span class="tag">Design</span>
         <h3>Social media template kit</h3>
         <p>A cohesive branded design system with post layouts, profile banners, highlight covers, and editable Canva links included.</p>
